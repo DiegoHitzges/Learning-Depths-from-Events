@@ -6,7 +6,7 @@ The events are processed into disparity space images (DSIs), representing the po
 
 We then filter each DSI for pixels with a sufficiently high ray count and extract sub-areas around them. These Sub-DSIs are then fed into a 3D-convolutional GRU neural network to obtain pixel-wise depth. Iin a second, multi-pixel network version, depth is estimated for the 3x3 grid surrounding the selected pixel.
 
-Input image here
+![Alt Text](Framework_Figure_DoubleArrow.pdf)
 
 To obtain the DSIs, see the repository ...
 
