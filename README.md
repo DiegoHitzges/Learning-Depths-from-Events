@@ -10,4 +10,4 @@ Input image here
 
 To obtain the DSIs, see the repository ...
 
-With these DSIs, models of our architecture can be trained and tested with the notebook ... For inference, see the notebook ... To visualize results, see the notebook ... Each application process is detailed step by step.
+All code of our approach is given in Jupyter Notebooks in the folder ... With these DSIs, models of our architecture can be trained and tested with the notebook ... For inference, see the notebook ... To visualize results, see the notebook ... Each application process is detailed step by step.
