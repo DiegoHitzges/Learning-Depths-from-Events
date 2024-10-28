@@ -1,6 +1,6 @@
 # Learning Depth from Event-based Ray Densities
 
-This is the repository for the conference paper ... The aim is to learn depth from event-camera data. For this, we employ a mix of a geometric and a learning based approach by processing the events into disparity space images (DSIs), filtering these for condfident pixels and then extracting a sub-area of the DSI around it. These Sub-DSIs are then fed into a neural network to estimate depth.
+This is the repository for the conference paper ... The aim is to learn depth from event-camera data. For this, we employ a mix of a geometric and a learning based approach by processing the events into disparity space images (DSIs), filtering these for condfident pixels and then extracting a sub-area of the DSI around it. These Sub-DSIs are then fed into a 3D-Convolutional GRU neural network to estimate depth.
 
 ![Alt Text](assets/Framework_cropped.png)
 
