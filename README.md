@@ -27,3 +27,13 @@ We present two versions of the network, identical in architecture except for the
 On the MVSEC <em>indoor_flying</em> sequence, our approach outperforms the state-of-the-art (SOTA) DSI-based method, reducing the mean absolute error (MAE) by 40% when applying the same filter to both methods. Compared to the SOTA non-DSI approach, we achieve a reduction in MAE of over 47%. Additionally, by applying a less strict filter, our method increases the number of depth-estimated pixels by a factor of 3.88, while still providing SOTA results. On this expanded set of pixels, our approach achieves an MAE 22% lower than the MAE of the SOTA DSI method on its original, much smaller set of pixels. The superiority of our method was further confirmed by retraining and testing on the DSEC sequence <em>zurich_city_04a</em>.
 
 ![Alt Text](assets/grid.png)
+
+### Usage Instructions
+
+The code for our approach is provided in Jupyter Notebooks within the `notebooks` folder. Below are instructions for each key notebook:
+
+- **Training and Testing**: Use the `training_and_testing` notebook to train models on DSIs created from event-camera data and evaluate the model performance. Each step in this notebook guides you through the entire training and testing process.
+- **Inference**: To generate depth estimates for new data, use the `inference` notebook, which provides step-by-step guidance on performing inference with trained models.
+- **Visualization**: The `visualization` notebook enables you to visualize results, making it easy to compare predictions with ground truth data and analyze model performance.
+
+Additionally, the code is available as NumPy files. After adjusting file paths to match your directories, these can be executed directly for training, inference, or visualization without the need for Jupyter.
