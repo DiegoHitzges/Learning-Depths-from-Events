@@ -1,6 +1,6 @@
 # Learning Depth from Event-based Ray Densities
 
-This repository accompanies our conference paper, "Learning Depth from Event-based Ray Densities." The objective is to estimate depth from event-camera data using a blend of geometric and learning-based approaches. Events are first processed into disparity space images (DSIs), from which pixels with high confidence are selected. Around each of these confident pixels, we extract a local subregion of the DSI (Sub-DSI). These Sub-DSIs are then passed to a 3D-Convolutional GRU neural network, which estimates pixel-wise depth, achieving significant improvements over prior state-of-the-art methods.
+This repository accompanies our conference paper, "Learning Depth from Event-based Ray Densities." The objective is to estimate depth from event-camera data using a blend of geometric and learning-based approaches. Events are first processed into disparity space images (DSIs), from which pixels with high confidence are selected. Around each of these confident pixels, we extract a local subregion of the DSI (Sub-DSI). These Sub-DSIs are then passed to a 3D-Convolutional GRU neural network, which estimates pixel-wise depth, achieving significant improvements over prior state-of-the-art (SOTA) methods in stereo as well as monocular settings.
 
 ![Alt Text](assets/Framework_cropped.png)
 
@@ -22,8 +22,8 @@ The neural network architecture is a 3D-Convolutional GRU. Each Sub-DSI first un
 
 We present two versions of the network, identical in architecture except for their last layer. In the single-pixel version, the network estimates the depth at the selected pixel, positioned centrally within the Sub-DSI. In the multi-pixel version, the output is a 3x3 grid, providing depth estimates for the selected pixel as well as its adjacent pixels.
 
-### Results
+### Performance
 
-On the MVSEC indoor flyinig sequence, our approach has outperformed the state-of-the-art (SOTA) DSI-based method by 40% with regards to the MAE. Compared to the SOTA non-DSI approach, we reduced the MAE by over ...%. Moreover, we strongly outperformed all existing learning-based methods.
+On the MVSEC indoor flying sequence, our approach outperforms the state-of-the-art (SOTA) DSI-based method, reducing the mean absolute error (MAE) by 40% when applying the same filter to both methods. Compared to the SOTA non-DSI approach, we achieve a reduction in MAE of over 47%. Additionally, by applying a less strict filter, our method increases the number of depth-estimated pixels by a factor of 3.88, while still providing SOTA results. On this expanded set of pixels, our approach achieves an MAE 22% lower than the MAE of the SOTA DSI method on its original, much smaller set of pixels. The superiority of our method was further confirmed by retraining and testing on the DSEC sequence "Zurich City 04a.
 
 Hier Video oder Bild einfügen von Vergleich
