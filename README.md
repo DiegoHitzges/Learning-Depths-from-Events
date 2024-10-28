@@ -4,6 +4,16 @@ This repository accompanies our conference paper, "Learning Depth from Event-bas
 
 ![Alt Text](assets/Framework_cropped.png)
 
+### Usage Instructions
+
+The code for our approach is provided in Jupyter Notebooks within the `notebooks` folder. Below are instructions for each key notebook:
+
+- **Training and Testing**: Use the `training_and_testing` notebook to train models on DSIs created from event-camera data and evaluate the model performance. Each step in this notebook guides you through the entire training and testing process.
+- **Inference**: To generate depth estimates for new data, use the `inference` notebook, which provides step-by-step guidance on performing inference with trained models.
+- **Visualization**: The `visualization` notebook enables you to visualize results, making it easy to compare predictions with ground truth data and analyze model performance.
+
+Additionally, the code is available as Python files. After adjusting file paths to match your directories, these can be executed directly for training, inference, or visualization without the need for Jupyter.
+
 ### Data-Preprocessing
 
 The events are processed into disparity space images (DSIs), which represent the potential depth of each pixel across multiple disparity levels by counting the rays passing through each voxel, projected from the pixel where an event was triggered. In stereo event vision, DSIs from two or more cameras can be fused, eliminating the need for event synchronization between cameras. This reduces complexity and enables more robust depth estimation. This approach was originally proposed in the [MC-EMVS](https://onlinelibrary.wiley.com/doi/10.1002/aisy.202200221) paper. To construct DSIs, refer to the associated repository, [dvs_mcemvs](https://github.com/tub-rip/dvs_mcemvs).
@@ -36,4 +46,4 @@ The code for our approach is provided in Jupyter Notebooks within the `notebooks
 - **Inference**: To generate depth estimates for new data, use the `inference` notebook, which provides step-by-step guidance on performing inference with trained models.
 - **Visualization**: The `visualization` notebook enables you to visualize results, making it easy to compare predictions with ground truth data and analyze model performance.
 
-Additionally, the code is available as NumPy files. After adjusting file paths to match your directories, these can be executed directly for training, inference, or visualization without the need for Jupyter.
+Additionally, the code is available as Python files. After adjusting file paths to match your directories, these can be executed directly for training, inference, or visualization without the need for Jupyter.
