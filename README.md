@@ -3,7 +3,7 @@
 This repository accompanies our conference paper, "Learning Depth from Event-based Ray Densities." The objective is to estimate depth from event-camera data using a blend of geometric and learning-based approaches. Events are first processed into disparity space images (DSIs), from which pixels with high confidence are selected. Around each of these confident pixels, we extract a local subregion of the DSI (Sub-DSI). These Sub-DSIs are then passed to a 3D-Convolutional GRU neural network, which estimates pixel-wise depth, achieving significant improvements over prior state-of-the-art (SOTA) methods in stereo as well as monocular settings.
 
 <div align="center">
-  ![Alt Text](assets/system_pipeline_thicker_arrows.png)
+  <img src="assets/system_pipeline_thicker_arrows.png" alt="Alt Text">
 </div>
 
 ### Data-Preprocessing
