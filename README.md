@@ -1,6 +1,6 @@
 # Learning Depth from Event-based Ray Densities
 
-This repository accompanies our conference paper, "Learning Depth from Event-based Ray Densities." The objective is to estimate depth from event-camera data using a blend of geometric and learning-based approaches. Events are first processed into disparity space images (DSIs), from which pixels with high confidence are selected. Around each of these confident pixels, we extract a local subregion of the DSI (Sub-DSI). These Sub-DSIs are then passed to a 3D-Convolutional GRU neural network, which estimates pixel-wise depth, achieving significant improvements over prior state-of-the-art (SOTA) methods in stereo as well as monocular settings.
+This repository accompanies our submitted conference paper, "DERD-Net: Learning Depth from Event-based Ray Densities." The objective is to estimate depth from event-camera data with a blend of geometric and learning-based approaches. Using camera pose, events are first back-projected into disparity space images (DSIs), representing event-ray densities in space, from which pixels with high confidence are selected. Around each of these confident pixels, we extract a local subregion of the DSI (Sub-DSI). These Sub-DSIs are then passed to an efficient 3D-Convolutional GRU Neural Network, which estimates pixel-wise depth, achieving significant improvements over prior state-of-the-art (SOTA) methods in stereo as well as monocular settings.
 
 <div align="center">
   <img src="assets/system_pipeline_thicker_arrows.png" alt="Alt Text">
@@ -16,7 +16,7 @@ To ensure reliable depth estimation, we apply an adaptive Gaussian threshold fil
 
 ### Neural Network
 
-The neural network architecture is a 3D-Convolutional GRU. Each Sub-DSI first undergoes a 3D convolution to capture geometric patterns and enhance generalization. Following this, each depth layer is fed sequentially to a GRU. Because the Sub-DSI consists of ray counts projected from the representative camera position into space, each depth layer depends on the previous one. Consequently, the last hidden state captures the embedding of all 3D geometric data in a 2D matrix. Finally, two fully connected layers map this embedding to the network output.
+The neural network architecture is a 3D-Convolutional GRU. Each Sub-DSI first undergoes a 3D-convolution to capture geometric patterns and enhance generalization. Following this, each depth layer is fed sequentially to a GRU to integrate information and reduce the dimension along the depth axis. Because the Sub-DSI consists of ray counts projected from the representative camera position into space, each depth layer depends on the previous one. Consequently, the last hidden state captures the embedding of all 3D geometric data in a 2D matrix. Finally, two fully connected layers map this embedding to the network output.
 
 <div align="center">
   <img src="assets/neural_net.png" alt="Alt Text">
@@ -28,7 +28,13 @@ We present two versions of the network, identical in architecture except for the
 
 ### Performance
 
-On the MVSEC <em>indoor_flying</em> sequence, our approach outperforms the state-of-the-art (SOTA) DSI-based method, reducing the mean absolute error (MAE) by 40% when applying the same filter to both methods. Compared to the SOTA non-DSI approach, we achieve a reduction in MAE of over 47%. Additionally, by applying a less strict filter, our method increases the number of depth-estimated pixels by a factor of 3.88, while still providing SOTA results. On this expanded set of pixels, our approach achieves an MAE 22% lower than the MAE of the SOTA DSI method on its original, much smaller set of pixels. The superiority of our method was further confirmed by retraining and testing on the DSEC sequence <em>zurich_city_04a</em>.
+Using 3-fold cross-validaton on the MVSEC <em>indoor_flying</em> sequences, our approach drastically outperforms all benchmark methods, including those operating on DSIs, and achieves unprecedented effectiveness:
+
+(i) Using purely monocular data, our method achieves comparable results to existing \emph{stereo} methods.
+(ii) When applied to stereo data, it strongly outperforms all state-of-the-art (SOTA) approaches, reducing the mean absolute error by at least 42%.
+(iii) Our method also allows for increases in depth completion by more than 3-fold while still yielding a reduction in median absolute error of at least 30%.
+
+The superiority of our method was further confirmed by retraining and testing on the DSEC sequence <em>zurich_city_04a</em>.
 
 <div align="center">
   <img src="assets/grid.png" alt="Alt Text">
