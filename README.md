@@ -30,9 +30,9 @@ We present two versions of the network, identical in architecture except for the
 
 Using 3-fold cross-validaton on the MVSEC <em>indoor_flying</em> sequences, our approach drastically outperforms all benchmark methods, including those operating on DSIs, and achieves unprecedented effectiveness:
 
-(i) Using purely monocular data, our method achieves comparable results to existing \emph{stereo} methods.
-(ii) When applied to stereo data, it strongly outperforms all state-of-the-art (SOTA) approaches, reducing the mean absolute error by at least 42%.
-(iii) Our method also allows for increases in depth completion by more than 3-fold while still yielding a reduction in median absolute error of at least 30%.
+- Using purely monocular data, our method achieves comparable results to existing \emph{stereo} methods.
+- When applied to stereo data, it strongly outperforms all state-of-the-art (SOTA) approaches, reducing the mean absolute error by at least 42%.
+- Our method also allows for increases in depth completion by more than 3-fold while still yielding a reduction in median absolute error of at least 30%.
 
 The superiority of our method was further confirmed by retraining and testing on the DSEC sequence <em>zurich_city_04a</em>.
 
