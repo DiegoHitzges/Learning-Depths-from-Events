@@ -1,8 +1,6 @@
-This folder contains four Jupyter Notebooks designed to streamline the training, testing, inference, and visualization of our approach for learning depth from event-based ray densities. The notebooks are configured to be run as they are.  All available options and configurations are explained in detail within the notebooks. The DSIs and LiDAR depthmaps are not included themselves due to storage limitations. To create them, see the associated online directory of the MC-EMVS paper. Please store them in the prepared dataset sub-directories or adjust the associated paths within the notebook accordingly.
-
-
 # Notebook Descriptions
 
+This folder contains four Jupyter Notebooks designed to streamline the training, testing, inference, and visualization of our approach for learning depth from event-based ray densities. The notebooks are configured to be run as they are.  All available options and configurations are explained in detail within the notebooks. The DSIs and LiDAR depthmaps are not included themselves due to storage limitations. To create them, see the associated online directory of the MC-EMVS paper. Please store them in the prepared dataset sub-directories or adjust the associated paths within the notebook accordingly.
 
 ### 1. Classes_and_Functions
 This notebook defines essential components for training and inference:
