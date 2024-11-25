@@ -18,7 +18,9 @@ To ensure reliable depth estimation, we apply an adaptive Gaussian threshold fil
 
 The neural network architecture is a 3D-Convolutional GRU. Each Sub-DSI first undergoes a 3D convolution to capture geometric patterns and enhance generalization. Following this, each depth layer is fed sequentially to a GRU. Because the Sub-DSI consists of ray counts projected from the representative camera position into space, each depth layer depends on the previous one. Consequently, the last hidden state captures the embedding of all 3D geometric data in a 2D matrix. Finally, two fully connected layers map this embedding to the network output.
 
-![Alt Text](assets/neural_net.png)
+<div align="center">
+  <img src="assets/neural_net.png" alt="Alt Text">
+</div>
 
 ### Output
 
@@ -28,7 +30,9 @@ We present two versions of the network, identical in architecture except for the
 
 On the MVSEC <em>indoor_flying</em> sequence, our approach outperforms the state-of-the-art (SOTA) DSI-based method, reducing the mean absolute error (MAE) by 40% when applying the same filter to both methods. Compared to the SOTA non-DSI approach, we achieve a reduction in MAE of over 47%. Additionally, by applying a less strict filter, our method increases the number of depth-estimated pixels by a factor of 3.88, while still providing SOTA results. On this expanded set of pixels, our approach achieves an MAE 22% lower than the MAE of the SOTA DSI method on its original, much smaller set of pixels. The superiority of our method was further confirmed by retraining and testing on the DSEC sequence <em>zurich_city_04a</em>.
 
-![Alt Text](assets/grid.png)
+<div align="center">
+  <img src="assets/grid.png" alt="Alt Text">
+</div>
 
 ### Usage Instructions
 
